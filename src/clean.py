@@ -21,9 +21,6 @@ numCols = ["winner_ht","winner_age","winner_seed","winner_rank","loser_ht","lose
 for c in numCols:
     df[c] = pd.to_numeric(df[c], errors="coerce")
 
-lvlMap = {"A":"ATP250","M":"Masters","G":"GrandSlam","F":"Finals"}
-df["tourney_level"] = df["tourney_level"].map(lvlMap).fillna(df["tourney_level"])
-
 aWin = pd.DataFrame({
     "tourneyId": df["tourney_id"],
     "tourneyName": df["tourney_name"],
