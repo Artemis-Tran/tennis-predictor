@@ -22,6 +22,8 @@ def getTourneyUrls(session):
         
         if not rowRes:
             continue   
+        
+        # Brisbane is part of the 2025 season but may be in 2024
         if "2024" in rowRes[0].text:
             if "Brisbane" not in rowRes[1].text:
                 continue
